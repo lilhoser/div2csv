@@ -1,0 +1,70 @@
+{
+	"ColumnSpecs": [
+	  {
+		"Name": "root",
+		"Required": true,
+		"XPaths": [
+		  "//div[@class='main-info-container']"
+		],
+		"Strip": []
+	  },
+	  {
+		"Name": "Auction",
+		"Required": true,
+		"XPaths": [
+		  "./div[@class='item-info'][1]/p/a[1]"
+		],
+		"Strip": []
+	  },
+	  {
+		"Name": "Item",
+		"Required": true,
+		"XPaths": [
+		  "./div[@class='item-info'][1]/a[1]"
+		],
+		"Strip": []
+	  },
+	  {
+		"Name": "Highlights",
+		"Required": false,
+		"XPaths": [
+		  "./div[@class='item-info'][1]//div[@class='highlights']"
+		],
+		"Strip": []
+	  },
+	  {
+		"Name": "Grader",
+		"Required": false,
+		"XPaths": [
+		  "./div[@class='lot-info-section']//div[@class='info-columns'][1]//div[@class='data-block double first']"
+		],
+		"Strip": ["service"]
+	  },
+	  {
+		"Name": "Grade",
+		"Required": false,
+		"XPaths": [
+		  "./div[@class='lot-info-section']//div[@class='info-columns'][1]//div[@class='data-block double']",
+		  "./div[@class='lot-info-section']//div[@class='info-columns'][1]//div[contains(@class, 'data-block')]"
+		],
+		"Strip": ["grade"]
+	  },
+	  {
+		"Name": "Date",
+		"Required": true,
+		"XPaths": [
+		  "./div[@class='lot-info-section']//div[@class='info-columns'][2]//div[@class='time-bidding-open']",
+		  "./div[@class='lot-info-section']//div[@class='info-columns'][1]//div[@class='time-bidding-open']"
+		],
+		"Strip": []
+	  },
+	  {
+		"Name": "Price",
+		"Required": true,
+		"XPaths": [
+		  "./following-sibling::div[@class='actions']//div[@class='holder']//div[@class='item-value']"
+		],
+		"Strip": ["sold for:"]
+	  }
+	]
+}
